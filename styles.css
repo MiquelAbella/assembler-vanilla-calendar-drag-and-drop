@@ -109,6 +109,7 @@ form button {
 }
 
 .day {
+  border-radius: 5px;
   border: 1px solid lightblue;
   padding: 10px;
   display: flex;
@@ -116,9 +117,15 @@ form button {
   align-items: flex-start;
   justify-content: flex-start;
   cursor: pointer;
+  overflow-x: hidden;
   overflow-y: auto;
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
   position: relative;
+}
+
+.day:hover{
+  background-color: rgb(248, 248, 253);
+  border: 1px solid rgb(191, 191, 253);
 }
 
 .day:after {
@@ -140,9 +147,9 @@ form button {
   font-size: 0.75em;
   width: 90%;
   margin: 1px;
-  padding: 2.5px;
+  padding: 5px;
   border-radius: 5px;
-  background-color: blue;
+  background-color: rgb(173, 173, 255);
   color: white;
 }
 
@@ -162,6 +169,10 @@ form button {
   padding-bottom: 10px;
   color: lightblue;
   user-select: none;
+}
+
+.arrows-container p:hover{
+  text-decoration: underline;
 }
 
 .hidden {

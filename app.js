@@ -1,12 +1,12 @@
-let closeAddModalBtn = document.querySelector("#add-modal-close-btn");
-let addEventModal = document.querySelector("#add-event-modal");
-let addEventForm = document.querySelector("#add-event-form");
-let editEventTextarea = document.querySelector("#edit-event-text-input");
+const closeAddModalBtn = document.querySelector("#add-modal-close-btn");
+const addEventModal = document.querySelector("#add-event-modal");
+const addEventForm = document.querySelector("#add-event-form");
+const editEventTextarea = document.querySelector("#edit-event-text-input");
 
-let closeEditModalBtn = document.querySelector("#edit-modal-close-btn");
-let editEventModal = document.querySelector("#edit-event-modal");
-let editEventForm = document.querySelector("#edit-event-form");
-let deleteEventBtn = document.querySelector("#delete-event");
+const closeEditModalBtn = document.querySelector("#edit-modal-close-btn");
+const editEventModal = document.querySelector("#edit-event-modal");
+const editEventForm = document.querySelector("#edit-event-form");
+const deleteEventBtn = document.querySelector("#delete-event");
 
 closeAddModalBtn.addEventListener("click", toggleAddModalVisibility);
 closeEditModalBtn.addEventListener("click", toggleEditModalVisibility);
@@ -20,7 +20,7 @@ let events = JSON.parse(localStorage.getItem("event-list")) || [];
 let year = new Date().getFullYear();
 let month = new Date().getMonth();
 
-let monthList = [
+const monthList = [
   "January",
   "February",
   "March",
@@ -53,15 +53,15 @@ function initCalendar() {
   calendarContainer.classList.add("calendar-container");
   calendarContainer.id = month + monthCounter + "-" + year;
 
-  let backArr = document.createElement("p");
-  let nextArr = document.createElement("p");
+  let backArrow = document.createElement("p");
+  let nextArrow = document.createElement("p");
 
-  backArr.innerText = "BACK";
-  backArr.id = "back-" + (month + monthCounter) + "-" + year;
-  backArr.addEventListener("click", printPrevMonth);
-  nextArr.innerText = "NEXT";
-  nextArr.id = "next-" + (month + monthCounter) + "-" + year;
-  nextArr.addEventListener("click", printNextMonth);
+  backArrow.innerText = "BACK";
+  backArrow.id = "back-" + (month + monthCounter) + "-" + year;
+  backArrow.addEventListener("click", printPrevMonth);
+  nextArrow.innerText = "NEXT";
+  nextArrow.id = "next-" + (month + monthCounter) + "-" + year;
+  nextArrow.addEventListener("click", printNextMonth);
 
   let numberOfDays = getDaysInMonth(
     year + yearCounter,
@@ -81,10 +81,12 @@ function initCalendar() {
     day.id = `${dayText.innerText}-${month + monthCounter}-${
       year + yearCounter
     }`;
+
     day.appendChild(dayText);
     day.addEventListener("click", addEventToCalendar);
     day.addEventListener("dragover", dragOver);
     day.addEventListener("drop", dragDrop);
+    day.addEventListener("dragleave", dragLeave);
     daysContainer.appendChild(day);
 
     events.map((event) => {
@@ -105,8 +107,8 @@ function initCalendar() {
   let navContainer = document.createElement("div");
   navContainer.classList.add("arrows-container");
 
-  navContainer.appendChild(backArr);
-  navContainer.appendChild(nextArr);
+  navContainer.appendChild(backArrow);
+  navContainer.appendChild(nextArrow);
 
   document.body.appendChild(calendarContainer);
 
@@ -202,7 +204,7 @@ function openEditForm(e) {
 
 function editEvent(e) {
   e.preventDefault();
-  console.log(currentEvent)
+  console.log(currentEvent);
   let currentDay = currentEvent.parentElement;
   let eventText = e.target.elements[0].value;
   currentEvent.innerText = eventText;
@@ -239,10 +241,17 @@ function dragStart(e) {
 
 function dragOver(e) {
   e.preventDefault();
+  e.target.style.border = "1px dashed blue";
+}
+
+function dragLeave(e) {
+  e.preventDefault();
+  e.target.style.border = "1px solid lightblue";
 }
 
 function dragDrop(e) {
   if (e.target.classList[0] === "day") {
+    e.target.style.border = "1px solid lightblue";
     e.target.appendChild(currentEvent);
     let filteredEvents = events.filter((evt) => {
       return evt.eventId != parseInt(currentEvent.id);

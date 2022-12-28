@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="add-event-modal" class="add-event-modal hidden">
+      <p id="add-modal-close-btn">X</p>
+      <form id="add-event-form">
+        <p>Add event</p>
+        <textarea
+          type="text"
+          id="add-event-text-input"
+          placeholder="Type some text"
+          cols="25"
+          rows="5"
+        ></textarea>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+    <div id="edit-event-modal" class="edit-event-modal hidden">
+      <p id="edit-modal-close-btn">X</p>
+      <form id="edit-event-form">
+        <p>Edit event</p>
+        <textarea
+          type="text"
+          id="edit-event-text-input"
+          placeholder="Type some text"
+          cols="25"
+          rows="5"
+        ></textarea>
+        <button type="submit">Save</button>
+      </form>
+      <button id="delete-event">Delete</button>
+    </div>
+  </body>
+</html>

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beegle Calendar</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="https://icons.veryicon.com/png/o/business/time-management/calendar-337.png">
+    <link
+      rel="icon"
+      href="https://icons.veryicon.com/png/o/business/time-management/calendar-337.png"
+    />
     <script src="app.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +20,7 @@
   </head>
   <body>
     <div id="add-event-modal" class="add-event-modal hidden">
-      <p id="add-modal-close-btn">X</p>
+      <p id="add-modal-close-btn">x</p>
       <form id="add-event-form">
         <p>Add event</p>
         <textarea
@@ -31,7 +34,7 @@
       </form>
     </div>
     <div id="edit-event-modal" class="edit-event-modal hidden">
-      <p id="edit-modal-close-btn">X</p>
+      <p id="edit-modal-close-btn">x</p>
       <form id="edit-event-form">
         <p>Edit event</p>
         <textarea
@@ -41,9 +44,11 @@
           cols="25"
           rows="5"
         ></textarea>
-        <button type="submit">Save</button>
+        <div class="buttons-container">
+          <button type="submit">Save</button>
+          <button id="delete-event">Delete</button>
+        </div>
       </form>
-      <button id="delete-event">Delete</button>
     </div>
   </body>
 </html>

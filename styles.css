@@ -49,6 +49,12 @@ body {
   background-color: white;
 }
 
+.add-event-modal p,
+.edit-event-modal p {
+  font-size: 1.5em;
+  color: lightblue;
+}
+
 #add-modal-close-btn,
 #edit-modal-close-btn {
   cursor: pointer;
@@ -72,17 +78,48 @@ textarea {
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 12px;
-  font-size: 1.5em;
+  font-size: 1.25em;
   outline: none;
   border: 1px solid lightblue;
   resize: none;
   width: 90%;
   font-family: "Roboto", sans-serif;
+  color: lightblue;
+}
+
+textarea::placeholder {
+  color: lightblue;
 }
 
 form button {
-  width: 50%;
+  cursor: pointer;
+  width: 40%;
   padding: 10px;
+  background-color: lightblue;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.buttons-container{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#delete-event{
+  background-color: rgb(237, 156, 156);
+}
+
+#delete-event:hover{
+  background-color: rgb(237, 145, 145);
+}
+
+form button:hover{
+  background-color: rgb(143, 208, 230);
 }
 
 .calendar-container {
@@ -123,7 +160,7 @@ form button {
   position: relative;
 }
 
-.day:hover{
+.day:hover {
   background-color: rgb(248, 248, 253);
   border: 1px solid rgb(191, 191, 253);
 }
@@ -171,7 +208,7 @@ form button {
   user-select: none;
 }
 
-.arrows-container p:hover{
+.arrows-container p:hover {
   text-decoration: underline;
 }
 

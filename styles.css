@@ -52,7 +52,7 @@ body {
 .add-event-modal p,
 .edit-event-modal p {
   font-size: 1.5em;
-  color: grey;
+  color: black;
 }
 
 #add-modal-close-btn,
@@ -67,7 +67,7 @@ body {
 #add-event-modal #add-event-form,
 #edit-event-modal #edit-event-form {
   width: 80%;
-  height: 60%;
+  height: 80%;
   border: 1px solid grey;
   display: flex;
   flex-direction: column;

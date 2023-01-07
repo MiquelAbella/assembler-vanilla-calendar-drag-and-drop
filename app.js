@@ -288,7 +288,7 @@ function addEvent(e) {
 
   newEvent.style.backgroundColor =
     eventType === "meeting"
-      ? "yellow"
+      ? "#c362f0"
       : eventType === "personal"
       ? "#62f07e"
       : eventType === "study"

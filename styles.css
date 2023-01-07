@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lightblue;
+  background: rgb(50, 50, 247);
 }
 
 * {
@@ -32,11 +32,10 @@ body {
 .add-event-modal,
 .edit-event-modal {
   z-index: 3;
-  border: 1px solid lightblue;
-  border-radius: 12px;
+  border: 1px solid rgb(50, 50, 247);
   position: absolute;
-  height: 300px;
-  width: 700px;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,13 +45,14 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: white;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
 }
 
 .add-event-modal p,
 .edit-event-modal p {
   font-size: 1.5em;
-  color: lightblue;
+  color: grey;
 }
 
 #add-modal-close-btn,
@@ -61,41 +61,87 @@ body {
   position: absolute;
   right: 10px;
   top: 10px;
-  color: lightblue;
+  color: rgb(50, 50, 247);
 }
 
-#add-event-modal form,
-#edit-event-modal form {
-  width: 100%;
-  height: 80%;
+#add-event-modal #add-event-form,
+#edit-event-modal #edit-event-form {
+  width: 80%;
+  height: 60%;
+  border: 1px solid grey;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea,
+.form-title {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 1.25em;
+  outline: none;
+  border: 1px solid grey;
+  resize: none;
+  width: 50%;
+  font-family: "Roboto", sans-serif;
+  color: rgb(40, 40, 40);
+}
+
+.add-btn {
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid rgb(50, 50, 247);
+  outline: none;
+  background: rgb(50, 50, 247);
+  color: white;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  border: 1px solid rgb(50, 50, 247);
+  background: white;
+  color: rgb(50, 50, 247);
+}
+
+.input-group {
+  width: 50%;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-textarea {
-  padding: 5px;
+.input-group input {
+  width: 50%;
+  margin-bottom: 5px;
+}
+
+select {
+  width: 50%;
   margin-bottom: 10px;
-  border-radius: 12px;
-  font-size: 1.25em;
-  outline: none;
-  border: 1px solid lightblue;
-  resize: none;
-  width: 90%;
-  font-family: "Roboto", sans-serif;
-  color: lightblue;
+  padding: 5px;
 }
 
-textarea::placeholder {
-  color: lightblue;
+fieldset {
+  width: 50%;
+  margin: 10px;
+  padding: 5px;
 }
 
-form button {
+.btn-group {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.submit-btn {
   cursor: pointer;
   width: 40%;
   padding: 10px;
-  background-color: lightblue;
+  background-color: rgb(50, 50, 247);
   border: none;
   outline: none;
   border-radius: 5px;
@@ -103,22 +149,35 @@ form button {
   transition-duration: 0.3s;
 }
 
-.buttons-container{
+#add-event-form .cancel-btn,
+#delete-event {
+  background-color: rgb(255, 112, 112);
+  cursor: pointer;
+  width: 40%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.buttons-container {
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#delete-event{
+#delete-event {
   background-color: rgb(237, 156, 156);
 }
 
-#delete-event:hover{
+#delete-event:hover {
   background-color: rgb(237, 145, 145);
 }
 
-form button:hover{
+form button:hover {
   background-color: rgb(143, 208, 230);
 }
 
@@ -133,7 +192,7 @@ form button:hover{
   width: 80vw;
   padding: 10px;
   padding-left: 0px;
-  color: lightblue;
+  color: rgb(50, 50, 247);
 }
 
 .month-container {
@@ -147,7 +206,7 @@ form button:hover{
 
 .day {
   border-radius: 5px;
-  border: 1px solid lightblue;
+  border: 1px solid rgb(50, 50, 247);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -204,7 +263,7 @@ form button:hover{
 .arrows-container p {
   cursor: pointer;
   padding-bottom: 10px;
-  color: lightblue;
+  color: rgb(50, 50, 247);
   user-select: none;
 }
 

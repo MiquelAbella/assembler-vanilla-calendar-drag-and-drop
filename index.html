@@ -23,30 +23,160 @@
       <p id="add-modal-close-btn">x</p>
       <form id="add-event-form">
         <p>Add event</p>
+        <input
+          class="form-title"
+          id="add-event-title"
+          type="text"
+          placeholder="title"
+          name="event-title"
+          required
+        />
         <textarea
           type="text"
           id="add-event-text-input"
-          placeholder="Type some text"
+          placeholder="Event body"
           cols="25"
           rows="5"
+          name="event-body"
+          required
         ></textarea>
-        <button type="submit">Add</button>
+        <div class="input-group">
+          <label for="add-event-start-date">Start date</label>
+          <input
+            id="add-event-start-date"
+            type="date"
+            name="event-start"
+            required
+          />
+          <input
+            id="add-start-time"
+            type="time"
+            name="add-start-time"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="add-event-checkbox">End date</label>
+          <input
+            id="add-event-checkbox"
+            type="checkbox"
+            style="display: none"
+          />
+          <input
+            id="add-event-end-date"
+            type="date"
+            name="event-end"
+            required
+          />
+          <input id="add-end-time" type="time" name="add-end-time" required />
+        </div>
+        <fieldset>
+          <legend>Select a reminder time</legend>
+          <div>
+            <input type="radio" name="reminder" id="5" value="5" checked />
+            <label for="5">5 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="10" value="10" />
+            <label for="10">10 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="15" value="15" />
+            <label for="15">15 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="30" value="30" />
+            <label for="30">30 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="60" value="60" />
+            <label for="60">60 minutes before</label>
+          </div>
+        </fieldset>
+        <select name="event-type" id="event-type">
+          <option value="other">--Set event type--</option>
+          <option value="meeting">Meeting</option>
+          <option value="personal">Personal</option>
+          <option value="study">Study</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="btn-group">
+          <button class="submit-btn" id="add-event-btn" type="submit">
+            Add
+          </button>
+          <button class="cancel-btn" type="button">Cancel</button>
+        </div>
       </form>
     </div>
     <div id="edit-event-modal" class="edit-event-modal hidden">
       <p id="edit-modal-close-btn">x</p>
       <form id="edit-event-form">
         <p>Edit event</p>
+        <input
+          class="form-title"
+          id="edit-event-title"
+          type="text"
+          placeholder="title"
+          name="event-title"
+          required
+        />
         <textarea
           type="text"
           id="edit-event-text-input"
           placeholder="Type some text"
           cols="25"
           rows="5"
+          required
         ></textarea>
-        <div class="buttons-container">
-          <button type="submit">Save</button>
-          <button id="delete-event">Delete</button>
+        <div class="input-group">
+          <label for="edit-event-start-date">Start</label>
+
+          <input
+            id="edit-event-start-date"
+            type="date"
+            name="event-start"
+            required
+          />
+          <input id="edit-start-time" type="time" name="start-time" required />
+        </div>
+        <div class="input-group">
+          <label for="edit-event-end-date">End</label>
+          <input id="edit-event-end-date" type="date" name="event-end" required/>
+          <input id="edit-end-time" type="time" name="end-time" required />
+        </div>
+        <fieldset>
+          <legend>Select a reminder time</legend>
+          <div>
+            <input type="radio" name="reminder" id="5" value="5" />
+            <label for="5">5 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="10" value="10" />
+            <label for="10">10 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="15" value="15" />
+            <label for="15">15 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="30" value="30" />
+            <label for="30">30 minutes before</label>
+          </div>
+          <div>
+            <input type="radio" name="reminder" id="60" value="60" />
+            <label for="60">60 minutes before</label>
+          </div>
+        </fieldset>
+        <select name="event-type" id="event-type-edit">
+          <option value="other">--Set event type--</option>
+          <option value="meeting">Meeting</option>
+          <option value="personal">Personal</option>
+          <option value="study">Study</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="btn-group">
+          <button class="submit-btn" type="submit">Save</button>
+          <button id="delete-event" type="button">Delete</button>
         </div>
       </form>
     </div>
